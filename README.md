@@ -140,7 +140,7 @@ The system will create a symbolic link: latest_model to your latest parameters f
 
 ### Decoding 
 
-You need to refer to your parameters file obtained while training. You should use the same hyperparams as the ones you uses during training.
+You need to refer to your parameters file obtained while training. You should use the same hyperparams as the ones you used while training.
 
 #### Decoding with embeddings
 
