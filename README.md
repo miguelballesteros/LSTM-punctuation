@@ -132,7 +132,7 @@ The system will create a symbolic link: latest_model to your latest parameters f
 
 #### Training with POS tags 
 
-    ./lstm-parse -T conll2003/train.parser -d conll2003/dev.parser --hidden_dim 100 --lstm_input_dim 100 --rel_dim 20 --action_dim 20 --input_dim 100 -t -P > log.txt &
+    ./lstm-parse -T conll2003/train.parser -d conll2003/dev.parser --hidden_dim 100 --lstm_input_dim 100 --rel_dim 20 --action_dim 20 --input_dim 100 -t -P -S > log.txt &
     
 
 ### Decoding with embeddings
@@ -147,3 +147,21 @@ The system will create a symbolic link: latest_model to your latest parameters f
 
     ./lstm-parse -T train.parser -d test.parser --hidden_dim 100 --lstm_input_dim 100 -w sskip.100.vectors --pretrained_dim 100 --rel_dim 20 --action_dim 20 --input_dim 100 -m latest_model -S > output.txt
 
+### Decoding with POS tags
+
+
+    ./lstm-parse -T train.parser -d test.parser --hidden_dim 100 --lstm_input_dim 100 -w sskip.100.vectors --pretrained_dim 100 --rel_dim 20 --action_dim 20 --input_dim 100 -m latest_model -S -P > output.txt
+
+
+You can of course use postags and embeddings. Just put the params accordingly.
+
+#### Citation
+
+If you make use of this software, please cite the following:
+
+    @inproceedings{2016emnlpbl,
+      author={Miguel Ballesteros and Leo Wanner},
+      title={A Neural Network Architecture for Multilingual Punctuation Generation},
+      booktitle={Proc. EMNLP},
+      year=2016,
+    }
