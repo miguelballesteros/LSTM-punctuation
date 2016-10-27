@@ -125,9 +125,6 @@ The system will create a symbolic link: latest_model to your latest parameters f
 
 #### Training with embeddings
 
-You need to MANUALLY STOP (ctrl c) training if the parameters file hasn't been changed for more than 5 hours.
-The system will create a symbolic link: latest_model to your latest parameters file.
-
     ./lstm-parse -T train.parser -d tdev.parser --hidden_dim 100 --lstm_input_dim 100 -w filewithembeddings --pretrained_dim 100 --rel_dim 20 --action_dim 20 --input_dim 100 -t -S > log.txt &
 
 
