@@ -5,6 +5,7 @@
 
 You just need to remove the punctuations in your input text and create a file in which each word in the list below is a SHIFT and each removed punctuation is a GEN(Punc-Punc)
 
+```
 [][The-DT, economy-NN, 's-POS, temperature-NN, will-MD, be-VB, taken-VBN, from-IN, several-DT, vantage-NN, points-NNS, this-DT, week-NN, with-IN, readings-NNS, on-IN, trade-NN, output-NN, housing-NN, and-CC, inflation-NN, END-END]
 SHIFT
 [][]
@@ -92,14 +93,16 @@ GEN(.-.)
 [][]
 SHIFT
 [][]
+```
 
 If you do not have POS tags you can put word-NA instead for all words. Example:
-
+```
 [][The-NA, most-NA, troublesome-NA, report-NA, may-NA, be-NA, the-NA, August-NA, merchandise-NA, trade-NA, deficit-NA, due-NA, out-NA, tomorrow-NA, END-END]
 SHIFT
 [][]
 SHIFT
 [][]
+```
 
 #### Build the system
 
