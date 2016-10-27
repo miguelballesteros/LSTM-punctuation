@@ -102,9 +102,10 @@ SHIFT
 [][]
 SHIFT
 [][]
+...
 ```
 
-#### Build the system
+### Build the system
 
 The first time you clone the repository, you need to sync the cnn/ submodule.
 ```
@@ -116,6 +117,11 @@ cd build
 cmake .. -DEIGEN3_INCLUDE_DIR=/path/to/eigen
 make -j2
 ```
+
+### Training
+
+You need to MANUALLY STOP (ctrl c) training if the parameters file hasn't been changed for more than 5 hours.
+The system will create a symbolic link: latest_model to your latest parameters file.
 
 #### Training with embeddings
 
@@ -142,12 +148,12 @@ The system will create a symbolic link: latest_model to your latest parameters f
     python attach_prediction.py -p output.txt -t conll2003/test -o evaloutput.txt
 
 
-### Decoding without embeddings
+#### Decoding without embeddings
 
 
     ./lstm-parse -T train.parser -d test.parser --hidden_dim 100 --lstm_input_dim 100 -w sskip.100.vectors --pretrained_dim 100 --rel_dim 20 --action_dim 20 --input_dim 100 -m latest_model -S > output.txt
 
-### Decoding with POS tags
+#### Decoding with POS tags
 
 
     ./lstm-parse -T train.parser -d test.parser --hidden_dim 100 --lstm_input_dim 100 -w sskip.100.vectors --pretrained_dim 100 --rel_dim 20 --action_dim 20 --input_dim 100 -m latest_model -S -P > output.txt
@@ -155,7 +161,7 @@ The system will create a symbolic link: latest_model to your latest parameters f
 
 You can of course use postags and embeddings. Just put the params accordingly.
 
-#### Citation
+### Citation
 
 If you make use of this software, please cite the following:
 
