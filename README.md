@@ -125,17 +125,17 @@ The system will create a symbolic link: latest_model to your latest parameters f
 
 #### Training with embeddings
 
-    ./lstm-parse -T train.parser -d tdev.parser --hidden_dim 100 --lstm_input_dim 100 -w filewithembeddings --pretrained_dim 100 --rel_dim 20 --action_dim 20 --input_dim 100 -t -S > log.txt &
+    ./lstm-parse -T train.parser -d tdev.parser --hidden_dim 100 --lstm_input_dim 100 -w filewithembeddings --pretrained_dim 100 --rel_dim 100 --action_dim 20 --input_dim 100 -t -S > log.txt &
 
 
 #### Training without embeddings
 
-    ./lstm-parse -T train.parser -d tdev.parser --hidden_dim 100 --lstm_input_dim 100 --rel_dim 20 --action_dim 100 --input_dim 100 -t -S > log.txt &
+    ./lstm-parse -T train.parser -d tdev.parser --hidden_dim 100 --lstm_input_dim 100 --rel_dim 100 --action_dim 20 --input_dim 100 -t -S > log.txt &
 
 
 #### Training with POS tags 
 
-    ./lstm-parse -T conll2003/train.parser -d conll2003/dev.parser --hidden_dim 100 --lstm_input_dim 100 --rel_dim 20 --action_dim 100 --input_dim 100 -t -P -S > log.txt &
+    ./lstm-parse -T conll2003/train.parser -d conll2003/dev.parser --hidden_dim 100 --lstm_input_dim 100 --rel_dim 100 --action_dim 20 --input_dim 100 -t -P -S > log.txt &
     
 
 ### Decoding 
@@ -144,18 +144,18 @@ You need to refer to your parameters file obtained while training. You should us
 
 #### Decoding with embeddings
 
-    ./lstm-parse -T train.parser -d test.parser --hidden_dim 100 --lstm_input_dim 100 -w sskip.100.vectors --pretrained_dim 100 --rel_dim 20 --action_dim 100 --input_dim 100 -m latest_model -S > output.txt
+    ./lstm-parse -T train.parser -d test.parser --hidden_dim 100 --lstm_input_dim 100 -w sskip.100.vectors --pretrained_dim 100 --rel_dim 100 --action_dim 20 --input_dim 100 -m latest_model -S > output.txt
     python attach_prediction.py -p output.txt -t conll2003/test -o evaloutput.txt
 
 
 #### Decoding without embeddings
 
 
-    ./lstm-parse -T train.parser -d test.parser --hidden_dim 100 --lstm_input_dim 100 -w sskip.100.vectors --pretrained_dim 100 --rel_dim 20 --action_dim 100 --input_dim 100 -m latest_model -S > output.txt
+    ./lstm-parse -T train.parser -d test.parser --hidden_dim 100 --lstm_input_dim 100 -w sskip.100.vectors --pretrained_dim 100 --rel_dim 100 --action_dim 20 --input_dim 100 -m latest_model -S > output.txt
 
 #### Decoding with POS tags
 
-    ./lstm-parse -T train.parser -d test.parser --hidden_dim 100 --lstm_input_dim 100 -w sskip.100.vectors --pretrained_dim 100 --rel_dim 20 --action_dim 100 --input_dim 100 -m latest_model -S -P > output.txt
+    ./lstm-parse -T train.parser -d test.parser --hidden_dim 100 --lstm_input_dim 100 -w sskip.100.vectors --pretrained_dim 100 --rel_dim 100 --action_dim 20 --input_dim 100 -m latest_model -S -P > output.txt
 
 
 You can of course use postags and embeddings. Just put the params accordingly.
